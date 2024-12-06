@@ -11,7 +11,10 @@ const dadJokeToolDefinition = {
 
 type Args = z.infer<typeof dadJokeToolDefinition.parameters>;
 
-export const dadJokeTool: ToolFn<Args, string> = async ({ toolArgs }) => {
+export const dadJokeTool: ToolFn<Args, string> = async ({
+  toolArgs,
+  userMessage,
+}) => {
   console.log(toolArgs);
   const res = await fetch('https://icanhazdadjoke.com/', {
     headers: {
