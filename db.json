@@ -1,3 +1,65 @@
 {
-"message":[]
+  "messages": [
+    {
+      "role": "user",
+      "content": "Quiero crear un meme divertido que incluya una imagen original y un chiste. Primero, obtén un chiste de tipo dad joke de Reddit. Luego, usa ese chiste para generar una imagen que represente el humor del chiste en un formato de meme. Asegúrate de que la imagen sea colorida y atractiva, y que el texto del chiste esté claramente visible en la parte superior e inferior de la imagen.",
+      "id": "48cc3bdb-fa78-4b2f-8732-996edd27e1b4",
+      "createdAt": "2024-12-06T21:08:44.990Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_6raBrpRsIgKsdtG6p6g80pi5",
+          "type": "function",
+          "function": {
+            "name": "get_dadjoke",
+            "arguments": "{\"reasoning\":\"El usuario quiere un chiste para crear un meme divertido.\"}"
+          }
+        }
+      ],
+      "refusal": null,
+      "id": "cac982a0-b9ba-4a85-9cae-6501373b4c19",
+      "createdAt": "2024-12-06T21:08:46.149Z"
+    },
+    {
+      "role": "tool",
+      "content": "I used to be addicted to soap, but I'm clean now.",
+      "tool_call_id": "call_6raBrpRsIgKsdtG6p6g80pi5",
+      "id": "677caf9a-cc0d-4e3a-aefc-a4c692cb324a",
+      "createdAt": "2024-12-06T21:08:47.124Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_1LkcDaGZR9p6M1Ijaj4070KH",
+          "type": "function",
+          "function": {
+            "name": "generate_image",
+            "arguments": "{\"prompt\":\"A colorful and attractive meme format featuring the dad joke: 'I used to be addicted to soap, but I'm clean now.' The top of the image should have the text clearly visible, and the bottom should also display the text. The background should be playful and humorous, possibly with cartoonish soap bubbles or a funny character related to cleanliness.\"}"
+          }
+        }
+      ],
+      "refusal": null,
+      "id": "81eae394-1bb4-4253-8e16-11836248469e",
+      "createdAt": "2024-12-06T21:08:48.899Z"
+    },
+    {
+      "role": "tool",
+      "content": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-18FsxoDcUSL2wgT5SAd3263L/user-hoMp87gCCRAbvyw04RKmuePp/img-kvFwKPm3WdqWwU4dCHMqZvia.png?st=2024-12-06T20%3A09%3A01Z&se=2024-12-06T22%3A09%3A01Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-12-06T19%3A11%3A45Z&ske=2024-12-07T19%3A11%3A45Z&sks=b&skv=2024-08-04&sig=6Ziwuyl6j5MKPQ5E4S5sFl3vg/jjm/tw7MYyq1cWZLQ%3D",
+      "tool_call_id": "call_1LkcDaGZR9p6M1Ijaj4070KH",
+      "id": "171af907-35fe-4dfa-a4b0-eaf4dce976fb",
+      "createdAt": "2024-12-06T21:09:02.131Z"
+    },
+    {
+      "role": "assistant",
+      "content": "He creado un meme divertido utilizando el chiste: \"I used to be addicted to soap, but I'm clean now.\" Aquí tienes la imagen:\n\n![Meme Divertido](https://oaidalleapiprodscus.blob.core.windows.net/private/org-18FsxoDcUSL2wgT5SAd3263L/user-hoMp87gCCRAbvyw04RKmuePp/img-kvFwKPm3WdqWwU4dCHMqZvia.png?st=2024-12-06T20%3A09%3A01Z&se=2024-12-06T22%3A09%3A01Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-12-06T19%3A11%3A45Z&ske=2024-12-07T19%3A11%3A45Z&sks=b&skv=2024-08-04&sig=6Ziwuyl6j5MKPQ5E4S5sFl3vg/jjm/tw7MYyq1cWZLQ%3D)\n\n¡Espero que te guste! Puedes compartirlo con tus amigos para sacarles una sonrisa.",
+      "refusal": null,
+      "id": "b2d81a79-b628-417d-8be4-94988525055b",
+      "createdAt": "2024-12-06T21:09:10.461Z"
+    }
+  ]
 }

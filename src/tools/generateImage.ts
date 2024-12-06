@@ -18,11 +18,12 @@ export const generateImageTool: ToolFn<Args, string> = async ({
   toolArgs,
   userMessage,
 }) => {
+  console.log(toolArgs)
   const response = await openai.images.generate({
     model: 'dall-e-3',
     prompt: toolArgs.prompt,
     n: 1,
-    size: '512x512',
+    size: '1024x1024',
   });
 
   return response.data[0].url as string;

@@ -11,11 +11,10 @@ export const runTool = async (
   //   userId:string
 ): Promise<string> => {
   const toolArgs = JSON.parse(toolCall.function.arguments || '{}');
-
+  
   const input = {
     userMessage,
-    // userId
-    ...toolArgs,
+    toolArgs,
   };
 
   switch (toolCall.function.name) {
