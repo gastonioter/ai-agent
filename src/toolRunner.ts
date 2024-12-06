@@ -1,17 +1,10 @@
 import type OpenAI from 'openai';
-
-const getWeather = async ({
-  userMessage,
-  ...toolArgs
-}: {
-  userMessage: string;
-}) => {
-  console.log(userMessage);
-  console.log(toolArgs);
-
-  return Promise.resolve(`very cold. 17deg`);
-};
-
+import {
+  generateImageTool,
+  generateImageTooDefinition,
+} from './tools/generateImage';
+import { redditTool, redditToolDefinition } from './tools/reddit';
+import { dadJokeTool, dadJokeToolDefinition } from './tools/dadJoke';
 export const runTool = async (
   toolCall: OpenAI.Chat.Completions.ChatCompletionMessageToolCall,
   userMessage: string
@@ -26,8 +19,15 @@ export const runTool = async (
   };
 
   switch (toolCall.function.name) {
-    case 'get_weather':
-      return await getWeather(input);
+    case generateImageTooDefinition.name:
+      const image = await generateImageTool(input);
+      return image;
+
+    case dadJokeToolDefinition.name:
+      return dadJokeTool(input);
+
+    case redditToolDefinition.name:
+      return redditTool(input);
 
     default:
       return `Please, stop calling ${toolCall.function.name} function, it doesn't exists`;

@@ -1,9 +1,11 @@
 import { z } from 'zod';
 import type { ToolFn } from '../../types';
 
-const redditToolDefinition = {
+export const redditToolDefinition = {
   name: 'reddit',
-  parameters: z.object({}),
+  parameters: z.object({
+    reasoning: z.string().describe('why did you pick this?.'),
+  }),
   description: 'get the lastes post from reddit',
 };
 
@@ -24,7 +26,6 @@ export const redditTool: ToolFn<Args, string> = async ({
     author: child.data.author,
     upvotes: child.data.ups,
   }));
-
 
   return JSON.stringify(relevantInfo, null, 2);
 };

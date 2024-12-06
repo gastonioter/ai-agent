@@ -1,11 +1,11 @@
 import { z } from 'zod';
 import type { ToolFn } from '../../types';
 
-const dadJokeToolDefinition = {
+export const dadJokeToolDefinition = {
   name: 'get_dadjoke',
   description: 'use this tool only when somone ask you for a dad joke',
   parameters: z.object({
-    reasoning: z.string(),
+    reasoning: z.string().describe('why did you pick this?.'),
   }),
 };
 
