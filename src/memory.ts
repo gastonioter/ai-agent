@@ -23,7 +23,9 @@ type Data = {
   messages: MessageWithMetadata[];
 };
 
-const initialData: Data = { messages: [] };
+const initialData: Data = {
+  messages: [],
+};
 
 export const getDb = async () => {
   const db = await JSONFilePreset<Data>('db.json', initialData);
@@ -41,7 +43,7 @@ export const saveToolMessage = (toolResponse: string, toolId: string) => {
   return addMessages([
     {
       role: 'tool',
-      content: toolResponse,  
+      content: toolResponse,
       tool_call_id: toolId,
     },
   ]);

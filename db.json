@@ -2,64 +2,229 @@
   "messages": [
     {
       "role": "user",
-      "content": "Quiero crear un meme divertido que incluya una imagen original y un chiste. Primero, obtén un chiste de tipo dad joke de Reddit. Luego, usa ese chiste para generar una imagen que represente el humor del chiste en un formato de meme. Asegúrate de que la imagen sea colorida y atractiva, y que el texto del chiste esté claramente visible en la parte superior e inferior de la imagen.",
-      "id": "48cc3bdb-fa78-4b2f-8732-996edd27e1b4",
-      "createdAt": "2024-12-06T21:08:44.990Z"
+      "content": "busca algo en reddit",
+      "id": "7fbdbeca-eb35-402f-9ae7-0c8954261980",
+      "createdAt": "2024-12-06T21:47:12.500Z"
+    },
+    {
+      "role": "assistant",
+      "content": "¿Qué tipo de contenido te gustaría buscar en Reddit? Por ejemplo, ¿noticias, memes, consejos, o algo específico?",
+      "refusal": null,
+      "id": "0d0f69b8-e8a9-4969-8040-8e86b5d0ee4d",
+      "createdAt": "2024-12-06T21:47:13.572Z"
+    },
+    {
+      "role": "user",
+      "content": "memes",
+      "id": "0b8d5b70-ebf2-4663-adef-74fde6629a12",
+      "createdAt": "2024-12-06T21:47:18.425Z"
     },
     {
       "role": "assistant",
       "content": null,
       "tool_calls": [
         {
-          "id": "call_6raBrpRsIgKsdtG6p6g80pi5",
+          "id": "call_XVg6IZ3A7674m4cu8e4InJAD",
           "type": "function",
           "function": {
-            "name": "get_dadjoke",
-            "arguments": "{\"reasoning\":\"El usuario quiere un chiste para crear un meme divertido.\"}"
+            "name": "reddit",
+            "arguments": "{\"reasoning\":\"El usuario está interesado en memes.\"}"
           }
         }
       ],
       "refusal": null,
-      "id": "cac982a0-b9ba-4a85-9cae-6501373b4c19",
-      "createdAt": "2024-12-06T21:08:46.149Z"
+      "id": "7be72004-7584-43c3-b6d0-24d58c78209c",
+      "createdAt": "2024-12-06T21:47:19.877Z"
     },
     {
       "role": "tool",
-      "content": "I used to be addicted to soap, but I'm clean now.",
-      "tool_call_id": "call_6raBrpRsIgKsdtG6p6g80pi5",
-      "id": "677caf9a-cc0d-4e3a-aefc-a4c692cb324a",
-      "createdAt": "2024-12-06T21:08:47.124Z"
+      "content": "Error fetching data",
+      "tool_call_id": "call_XVg6IZ3A7674m4cu8e4InJAD",
+      "id": "0fb42b66-27d4-451d-9f79-cb3d54b844af",
+      "createdAt": "2024-12-06T21:47:20.076Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Parece que hubo un problema al intentar buscar memes en Reddit. ¿Te gustaría que intentara de nuevo o prefieres buscar algo diferente?",
+      "refusal": null,
+      "id": "436d57fb-2450-400a-8988-4e5f2fdf292e",
+      "createdAt": "2024-12-06T21:47:21.130Z"
+    },
+    {
+      "role": "user",
+      "content": "intenta de nuevo",
+      "id": "43c1f44a-ea96-4cf9-b9cd-3b398ffa5b01",
+      "createdAt": "2024-12-06T21:48:00.993Z"
     },
     {
       "role": "assistant",
       "content": null,
       "tool_calls": [
         {
-          "id": "call_1LkcDaGZR9p6M1Ijaj4070KH",
+          "id": "call_J4enjcg0DwThycmg7jdlxKPq",
           "type": "function",
           "function": {
-            "name": "generate_image",
-            "arguments": "{\"prompt\":\"A colorful and attractive meme format featuring the dad joke: 'I used to be addicted to soap, but I'm clean now.' The top of the image should have the text clearly visible, and the bottom should also display the text. The background should be playful and humorous, possibly with cartoonish soap bubbles or a funny character related to cleanliness.\"}"
+            "name": "reddit",
+            "arguments": "{\"reasoning\":\"El usuario sigue interesado en memes.\"}"
           }
         }
       ],
       "refusal": null,
-      "id": "81eae394-1bb4-4253-8e16-11836248469e",
-      "createdAt": "2024-12-06T21:08:48.899Z"
+      "id": "80366310-36aa-4865-ab20-e832501f4a65",
+      "createdAt": "2024-12-06T21:48:02.301Z"
     },
     {
       "role": "tool",
-      "content": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-18FsxoDcUSL2wgT5SAd3263L/user-hoMp87gCCRAbvyw04RKmuePp/img-kvFwKPm3WdqWwU4dCHMqZvia.png?st=2024-12-06T20%3A09%3A01Z&se=2024-12-06T22%3A09%3A01Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-12-06T19%3A11%3A45Z&ske=2024-12-07T19%3A11%3A45Z&sks=b&skv=2024-08-04&sig=6Ziwuyl6j5MKPQ5E4S5sFl3vg/jjm/tw7MYyq1cWZLQ%3D",
-      "tool_call_id": "call_1LkcDaGZR9p6M1Ijaj4070KH",
-      "id": "171af907-35fe-4dfa-a4b0-eaf4dce976fb",
-      "createdAt": "2024-12-06T21:09:02.131Z"
+      "content": "Error fetching data",
+      "tool_call_id": "call_J4enjcg0DwThycmg7jdlxKPq",
+      "id": "232746a1-d4e1-49f2-83b6-92594e72df49",
+      "createdAt": "2024-12-06T21:48:02.812Z"
     },
     {
       "role": "assistant",
-      "content": "He creado un meme divertido utilizando el chiste: \"I used to be addicted to soap, but I'm clean now.\" Aquí tienes la imagen:\n\n![Meme Divertido](https://oaidalleapiprodscus.blob.core.windows.net/private/org-18FsxoDcUSL2wgT5SAd3263L/user-hoMp87gCCRAbvyw04RKmuePp/img-kvFwKPm3WdqWwU4dCHMqZvia.png?st=2024-12-06T20%3A09%3A01Z&se=2024-12-06T22%3A09%3A01Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-12-06T19%3A11%3A45Z&ske=2024-12-07T19%3A11%3A45Z&sks=b&skv=2024-08-04&sig=6Ziwuyl6j5MKPQ5E4S5sFl3vg/jjm/tw7MYyq1cWZLQ%3D)\n\n¡Espero que te guste! Puedes compartirlo con tus amigos para sacarles una sonrisa.",
+      "content": "Parece que todavía hay un problema para acceder a Reddit. No puedo obtener memes en este momento. ¿Te gustaría que te ayudara con otra cosa o que te diera información sobre algún tema específico?",
       "refusal": null,
-      "id": "b2d81a79-b628-417d-8be4-94988525055b",
-      "createdAt": "2024-12-06T21:09:10.461Z"
+      "id": "4a93d410-3f73-4fa8-9b74-31c8adf33c6c",
+      "createdAt": "2024-12-06T21:48:03.931Z"
+    },
+    {
+      "role": "user",
+      "content": "intenta de nuevo",
+      "id": "0605333b-1b9a-4b76-bed0-73cce58a1621",
+      "createdAt": "2024-12-06T21:48:33.876Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_RfDHJD6QoTle1QzGkj3C7vcx",
+          "type": "function",
+          "function": {
+            "name": "reddit",
+            "arguments": "{\"reasoning\":\"El usuario sigue interesado en memes.\"}"
+          }
+        }
+      ],
+      "refusal": null,
+      "id": "9033c510-f044-473f-a3e9-e1f4ee3e2051",
+      "createdAt": "2024-12-06T21:48:35.580Z"
+    },
+    {
+      "role": "tool",
+      "content": "Error fetching data",
+      "tool_call_id": "call_RfDHJD6QoTle1QzGkj3C7vcx",
+      "id": "b665ce6a-f953-4839-9803-7d1e40335c4a",
+      "createdAt": "2024-12-06T21:48:35.737Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Sigo teniendo problemas para acceder a Reddit y no puedo obtener memes en este momento. Si deseas, puedo ayudarte con otra consulta o buscar información sobre un tema diferente. ¿Qué te gustaría hacer?",
+      "refusal": null,
+      "id": "74dce856-dde7-4259-8915-9d19a4aa51ff",
+      "createdAt": "2024-12-06T21:48:37.451Z"
+    },
+    {
+      "role": "user",
+      "content": "intenta de nuevo",
+      "id": "0985bc4e-550b-4de8-aa5f-c62ac039b8a9",
+      "createdAt": "2024-12-06T21:49:21.493Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_KP15ubqt1LDTll6YkYwp0bTC",
+          "type": "function",
+          "function": {
+            "name": "reddit",
+            "arguments": "{\"reasoning\":\"El usuario sigue interesado en memes.\"}"
+          }
+        }
+      ],
+      "refusal": null,
+      "id": "09cc9ba8-bcaf-4f61-b753-b9cdba1dff49",
+      "createdAt": "2024-12-06T21:49:22.889Z"
+    },
+    {
+      "role": "tool",
+      "content": "Error fetching data",
+      "tool_call_id": "call_KP15ubqt1LDTll6YkYwp0bTC",
+      "id": "ba8ea36e-cb6a-4e0c-9274-29467bdc4047",
+      "createdAt": "2024-12-06T21:49:23.299Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Lamentablemente, no puedo acceder a Reddit en este momento, y no puedo obtener memes. Si tienes otra solicitud o pregunta, estaré encantado de ayudarte. ¿Qué más te gustaría saber o hacer?",
+      "refusal": null,
+      "id": "b055f71a-9aaf-4490-b277-1558a0a65d0f",
+      "createdAt": "2024-12-06T21:49:24.213Z"
+    },
+    {
+      "role": "user",
+      "content": "que dia es maniana?",
+      "id": "b32e1d01-4796-4a01-88db-908326731884",
+      "createdAt": "2024-12-06T21:50:03.612Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Mañana será 13 de junio de 2024.",
+      "refusal": null,
+      "id": "5d093695-4cff-42ab-bb12-331062ade53c",
+      "createdAt": "2024-12-06T21:50:05.102Z"
+    },
+    {
+      "role": "user",
+      "content": "que dia es hoy?",
+      "id": "f94b05df-a35b-42dc-b016-1de51f3ec390",
+      "createdAt": "2024-12-06T21:50:16.990Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Hoy es 12 de junio de 2024.",
+      "refusal": null,
+      "id": "0c1bcda0-264b-490e-9d3f-f5324d275fc7",
+      "createdAt": "2024-12-06T21:50:18.272Z"
+    },
+    {
+      "role": "user",
+      "content": "que dia es hoy?",
+      "id": "f2a9e6ec-e520-47e4-9099-f3a584940bf9",
+      "createdAt": "2024-12-06T21:50:40.447Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Hoy es 6 de diciembre de 2024.",
+      "refusal": null,
+      "id": "129dab8b-788e-400c-bf1b-eaf6aeea2059",
+      "createdAt": "2024-12-06T21:50:41.799Z"
+    },
+    {
+      "role": "user",
+      "content": "que dia es maniana?",
+      "id": "912d631b-6929-430e-885f-6e6bd78ad044",
+      "createdAt": "2024-12-06T21:50:47.170Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Mañana será 7 de diciembre de 2024.",
+      "refusal": null,
+      "id": "e04e444f-2a83-4dee-a6d5-588183a73de7",
+      "createdAt": "2024-12-06T21:50:48.959Z"
+    },
+    {
+      "role": "user",
+      "content": "como esta el dia fuera",
+      "id": "352a1ff8-ef93-4ac9-a44e-254d565a40c1",
+      "createdAt": "2024-12-06T21:51:02.201Z"
+    },
+    {
+      "role": "assistant",
+      "content": "No tengo acceso a información en tiempo real sobre el clima. Te recomendaría que consultes una aplicación de clima o un sitio web para obtener la información más actualizada sobre el clima en tu área. ¿Hay algo más en lo que pueda ayudarte?",
+      "refusal": null,
+      "id": "7a15294d-0045-4908-89e6-1ce9dcef9351",
+      "createdAt": "2024-12-06T21:51:03.458Z"
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import type { ToolFn } from '../../types';
+import fetch from 'node-fetch';
 
 export const redditToolDefinition = {
   name: 'reddit',
@@ -15,9 +16,16 @@ export const redditTool: ToolFn<Args, string> = async ({
   toolArgs,
   userMessage,
 }) => {
-  const { data } = await fetch('https://www.reddit.com/r/aww/.json').then(
-    (res) => res.json()
-  );
+  const response = await fetch('https://www.reddit.com/.json', {
+    agent: 'myapp',
+  });
+
+  console.log(response);
+  if (!response.ok) {
+    return 'Error fetching data';
+  }
+
+  const data = await response.json();
 
   const relevantInfo = data.children.map((child: any) => ({
     title: child.data.title,
@@ -27,5 +35,9 @@ export const redditTool: ToolFn<Args, string> = async ({
     upvotes: child.data.ups,
   }));
 
-  return JSON.stringify(relevantInfo, null, 2);
+  try {
+    return JSON.stringify(relevantInfo, null, 2);
+  } catch (error) {
+    return 'Error parsing data';
+  }
 };
