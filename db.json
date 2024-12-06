@@ -1,3 +1,40 @@
 {
-  "messages": []
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello, my name is gaston castro",
+      "id": "6f4ebd95-69b7-444f-8db7-ec070f60afce",
+      "createdAt": "2024-12-06T00:04:37.324Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello, Gaston Castro! How can I assist you today?",
+      "id": "77d59c4f-57ff-471a-9ec8-2898b071817f",
+      "createdAt": "2024-12-06T00:04:37.324Z"
+    },
+    {
+      "role": "user",
+      "content": "hello, my name is gaston castro",
+      "id": "548630da-2773-424f-b16c-4849731932cb",
+      "createdAt": "2024-12-06T00:04:53.783Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello, Gaston Castro! How can I assist you today?",
+      "id": "09e8629f-368d-49ae-8432-1025dff00910",
+      "createdAt": "2024-12-06T00:04:53.783Z"
+    },
+    {
+      "role": "user",
+      "content": "do you know my name?",
+      "id": "ff62ed41-4a19-42c8-8728-29420413e5d6",
+      "createdAt": "2024-12-06T00:04:53.783Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Yes, you mentioned that your name is Gaston Castro. How can I help you today?",
+      "id": "c6afb7f2-9b90-4b60-bf16-d655245af20c",
+      "createdAt": "2024-12-06T00:04:53.783Z"
+    }
+  ]
 }
