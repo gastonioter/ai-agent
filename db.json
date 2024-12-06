@@ -2,39 +2,122 @@
   "messages": [
     {
       "role": "user",
-      "content": "hello, my name is gaston castro",
-      "id": "6f4ebd95-69b7-444f-8db7-ec070f60afce",
-      "createdAt": "2024-12-06T00:04:37.324Z"
+      "content": "what is the weather in India?",
+      "id": "b7dbd740-2888-480e-bcfd-2ca2f860bc7e",
+      "createdAt": "2024-12-06T05:36:49.580Z"
     },
     {
       "role": "assistant",
-      "content": "Hello, Gaston Castro! How can I assist you today?",
-      "id": "77d59c4f-57ff-471a-9ec8-2898b071817f",
-      "createdAt": "2024-12-06T00:04:37.324Z"
+      "content": "I can only provide weather information for Argentina. If you're interested in the weather there, please let me know!",
+      "refusal": null,
+      "id": "1a96d274-403d-4a21-809e-68d5707c0b42",
+      "createdAt": "2024-12-06T05:36:50.627Z"
     },
     {
       "role": "user",
-      "content": "hello, my name is gaston castro",
-      "id": "548630da-2773-424f-b16c-4849731932cb",
-      "createdAt": "2024-12-06T00:04:53.783Z"
+      "content": "what is the weather in India?",
+      "id": "c154fbb7-9dd1-4826-b04d-55b48aa590a1",
+      "createdAt": "2024-12-06T05:37:36.038Z"
     },
     {
       "role": "assistant",
-      "content": "Hello, Gaston Castro! How can I assist you today?",
-      "id": "09e8629f-368d-49ae-8432-1025dff00910",
-      "createdAt": "2024-12-06T00:04:53.783Z"
+      "content": "I can only provide weather information for Argentina. If you would like to know the weather in Argentina, please let me know!",
+      "refusal": null,
+      "id": "b22b0b59-dc35-4968-856f-93dcb98896c9",
+      "createdAt": "2024-12-06T05:37:38.165Z"
     },
     {
       "role": "user",
-      "content": "do you know my name?",
-      "id": "ff62ed41-4a19-42c8-8728-29420413e5d6",
-      "createdAt": "2024-12-06T00:04:53.783Z"
+      "content": "what is the weather in Arg?",
+      "id": "9e8aef02-67d5-4b93-bd77-6b16ae4581e5",
+      "createdAt": "2024-12-06T05:37:51.348Z"
     },
     {
       "role": "assistant",
-      "content": "Yes, you mentioned that your name is Gaston Castro. How can I help you today?",
-      "id": "c6afb7f2-9b90-4b60-bf16-d655245af20c",
-      "createdAt": "2024-12-06T00:04:53.783Z"
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_LCgTirtfHNy324KmIwOdKDkq",
+          "type": "function",
+          "function": {
+            "name": "get_weather",
+            "arguments": "{\"reasoning\":\"User requested weather information for Argentina.\"}"
+          }
+        }
+      ],
+      "refusal": null,
+      "id": "a9879c6f-f8ec-4e0f-87b3-1c5ab260afa0",
+      "createdAt": "2024-12-06T05:37:52.979Z"
+    },
+    {
+      "role": "tool",
+      "content": "It's too cold outside, we're in winter",
+      "tool_call_id": "call_LCgTirtfHNy324KmIwOdKDkq",
+      "id": "3139ecb7-a250-4203-982b-f7525c642fc8",
+      "createdAt": "2024-12-06T05:37:52.980Z"
+    },
+    {
+      "role": "assistant",
+      "content": "The weather in Argentina is currently quite cold as it is winter. If you need more specific details or information about a particular city in Argentina, feel free to ask!",
+      "refusal": null,
+      "id": "6700bb50-6dbb-4635-82d0-1d11a228fee3",
+      "createdAt": "2024-12-06T05:37:54.216Z"
+    },
+    {
+      "role": "user",
+      "content": "what is the weather in Arg?",
+      "id": "a4698947-40a9-49d7-bdf3-562166ce397d",
+      "createdAt": "2024-12-06T05:41:17.139Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_rtiozSYlewj6HtysnGbr2fXn",
+          "type": "function",
+          "function": {
+            "name": "get_weather",
+            "arguments": "{\"reasoning\":\"User is asking for the weather in Argentina again.\"}"
+          }
+        }
+      ],
+      "refusal": null,
+      "id": "6eae4abd-b080-446f-8632-5bc0e293afc1",
+      "createdAt": "2024-12-06T05:41:18.878Z"
+    },
+    {
+      "role": "tool",
+      "content": "It's too cold outside, we're in winter",
+      "tool_call_id": "call_rtiozSYlewj6HtysnGbr2fXn",
+      "id": "efa7d55d-688c-42d9-bb26-2977275b7bd6",
+      "createdAt": "2024-12-06T05:41:18.879Z"
+    },
+    {
+      "role": "assistant",
+      "content": "The weather in Argentina remains quite cold since it is winter. If you have a specific city in mind or need more detailed information, just let me know!",
+      "refusal": null,
+      "id": "de873642-fdee-46b5-85ef-3ab9452db43f",
+      "createdAt": "2024-12-06T05:41:19.935Z"
+    },
+    {
+      "role": "user",
+      "content": "what is the weather in India?",
+      "id": "7025e47a-f7c7-45f7-87f6-6a2969d09e3d",
+      "createdAt": "2024-12-06T05:41:35.127Z"
+    },
+    {
+      "role": "user",
+      "content": "what is the weather in India?",
+      "id": "64be3ce3-d733-4cde-be40-de4e66317b1e",
+      "createdAt": "2024-12-06T05:41:43.490Z"
+    },
+    {
+      "role": "assistant",
+      "content": "I can only provide weather information for Argentina. If you're interested in the weather there, please let me know!",
+      "refusal": null,
+      "id": "98b06bed-142c-417e-ae21-a016b698f5f9",
+      "createdAt": "2024-12-06T05:41:44.423Z"
     }
   ]
 }
