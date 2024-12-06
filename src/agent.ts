@@ -1,63 +1,44 @@
-import { runLLM } from './llm'
-import { addMessages, getMessages } from './memory'
-import { logMessage, showLoader } from './ui'
-
-const MAX_CALLS = 5
-// function tool
-function getWeather({ reasoning }: { reasoning: string }) {
-  console.log(reasoning)
-  return "It's too cold outside, we're in winter"
-}
+import { runLLM } from './llm';
+import { addMessages, getMessages, saveToolMessage } from './memory';
+import { runTool } from './toolRunner';
+import { logMessage, showLoader } from './ui';
 
 export const runAgent = async ({
   userMessage,
   tools,
 }: {
-  userMessage: string
-  tools: any[]
+  userMessage: string;
+  tools: any[];
 }) => {
-  await addMessages([{ role: 'user', content: userMessage }])
+  await addMessages([{ role: 'user', content: userMessage }]);
 
-  const loader = showLoader('Thinking')
+  const loader = showLoader('Thinking');
 
-  const history = await getMessages()
+  // Agent Loop
+  while (true) {
+    const history = await getMessages();
 
-  let response = await runLLM({
-    messages: [...history],
-    tools,
-  })
-  let iterations = 0
-  while (response.tool_calls?.length && iterations < MAX_CALLS) {
-    await addMessages([response])
-
-    let toolResponse: string = ''
-    const tool = response.tool_calls[0]
-
-    if (tool.function.name === 'get_weather') {
-      const args = JSON.parse(tool.function.arguments)
-      toolResponse = getWeather(args)
-    }
-
-    const toolMessage = {
-      role: 'tool' as const,
-      content: toolResponse,
-      tool_call_id: tool.id,
-    }
-
-    await addMessages([toolMessage])
-
-    response = await runLLM({
-      messages: [...history, response, toolMessage],
+    const response = await runLLM({
+      messages: history,
       tools,
-    })
+    });
 
-    iterations++
+    await addMessages([response]);
+
+    if (response.content) {
+      loader.stop();
+      return logMessage(response);
+    }
+
+    if (response.tool_calls) {
+      // call the tool
+      const toolCall = response.tool_calls[0];
+      loader.update(`executing: ${toolCall.function.name}`);
+      const toolResponse = await runTool(toolCall, userMessage);
+
+      // save the response
+      await saveToolMessage(toolResponse, toolCall.id);
+      loader.update(`done: ${toolCall.function.name}`);
+    }
   }
-
-  await addMessages([response])
-
-  loader.stop()
-  logMessage(response)
-
-  return getMessages()
-}
+};

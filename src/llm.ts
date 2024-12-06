@@ -24,7 +24,7 @@ export const runLLM = async ({
     parallel_tool_calls: false,
   })
 
-  console.log(response.usage)
+  //console.log(response.usage)
 
   return response.choices[0].message
 }
